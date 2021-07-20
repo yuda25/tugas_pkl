@@ -1,0 +1,24 @@
+import random
+
+dice={}
+def roll(sides=6):
+    lemparDadu=random.randint(1,sides)
+    return lemparDadu
+
+def main():
+    main_kan=True
+    while main_kan:
+        angka=roll()
+        pilihan=input('acak dadu?(enter/n)')
+        if pilihan.lower()!="n":
+            print('rolling dice...')
+            if angka in dice:
+                dice[angka]+=1
+            else:
+                dice[angka]=1
+                print('angka yang di dapat:',angka)
+        else:
+            main_kan=False
+            for angka in range(1,7):
+                print("angka",str(angka),"keluar",str(dice[angka]),"kali.")
+main()
